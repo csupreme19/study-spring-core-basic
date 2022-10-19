@@ -6,6 +6,15 @@ public class Member {
     private String name;
     private Grade grade;
 
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", grade=" + grade +
+                '}';
+    }
+
     public Member() {
     }
 
