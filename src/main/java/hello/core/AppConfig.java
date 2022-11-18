@@ -8,11 +8,23 @@ import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.PostConstruct;
+
 @Configuration
+@RequiredArgsConstructor
 public class AppConfig {
+
+    private final ApplicationContext ac;
+
+    @PostConstruct
+    public void init() {
+        System.out.println(ac);
+    }
 
     @Bean
     public DiscountPolicy discountPolicy() {
